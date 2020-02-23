@@ -22,14 +22,14 @@ namespace CityCoordinate.Api
             throw new NotImplementedException();
         }
 
-        public async Task<CityСoordinate> GetList()
+        public IList<CityСoordinate> GetList()
         {
-            return await _collection.Find(сoordinate => true).FirstAsync();
+            return new[] {_collection.Find(сoordinate => true).First()};
         }
-        public async Task<CityСoordinate> CheckList(string city)
+        public IList<CityСoordinate> CheckList(string city)
         {
-            return  await _collection.Find(coordinate
-            => coordinate.Name == city).FirstOrDefaultAsync();
+            return new[] {_collection.Find(coordinate
+                => coordinate.Name == city).FirstOrDefault()};
         }
     }
 }

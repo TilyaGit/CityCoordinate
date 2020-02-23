@@ -7,8 +7,8 @@ namespace CityCoordinate.Core
     {
         void SaveList(IList<CityСoordinate> cityСoordinates);
 
-        Task<CityСoordinate> CheckList(string city);
-        Task<CityСoordinate> GetList();
+        IList<CityСoordinate> CheckList(string city);
+        IList<CityСoordinate> GetList();
 
     }
 }
